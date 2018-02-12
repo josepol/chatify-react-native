@@ -9,11 +9,5 @@ export default StyleSheet.create({
         alignItems: 'stretch',
         height: 220,
         alignContent: 'space-around'
-    },
-    contentItem: {
-        width: 200,
-        height: 200,
-        margin: 10,
-        backgroundColor: '#56B99D'
     }
 });

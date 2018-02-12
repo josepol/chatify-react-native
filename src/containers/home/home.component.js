@@ -3,6 +3,7 @@ import { StyleSheet, View, Button, Text, ScrollView } from 'react-native';
 import SideMenu from 'react-native-side-menu';
 import Navbar from '../../components/navbar/navbar.component';
 import Menu from '../../components/menu/menu.component';
+import TitleComponent from './components/title/title.component';
 import styles from './home.styles';
 
 export default class Home extends Component {
@@ -47,20 +48,14 @@ export default class Home extends Component {
 				isOpen={this.state.isOpen}
 				onChange={isOpen => this.menuChangeListener()}>
 				<View style={styles.container}>
+					<ScrollView>
 					<ScrollView
 						horizontal={true}
 						showsHorizontalScrollIndicator={false}
-						contentContainerStyle={styles.contentContainer} >
-						<View style={styles.contentItem}>
-
-						</View>
-						<View style={styles.contentItem}>
-
-						</View>
-						<View style={styles.contentItem}>
-
-
-						</View>
+						contentContainerStyle={styles.contentContainer}>
+						<TitleComponent title='Developer' subtitle='Developer description' />
+						<TitleComponent title='Blogger' subtitle='Blogger Madaf...' />
+						<TitleComponent title='Freelancer' subtitle='Freelancer workaholic' />
 					</ScrollView>
                     <Button
                         title="Open menu"
@@ -72,6 +67,7 @@ export default class Home extends Component {
                         onPress={() => this.openLogin()}
                         accessibilityLabel="open login"
                     />
+					</ScrollView>
 				</View>
 			</SideMenu>
 		);
