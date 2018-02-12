@@ -8,7 +8,7 @@ export default class Menu extends Component {
         return (
             <View style={styles.container}>
                 <TouchableWithoutFeedback style={styles.link} onPress={() => this.navigateToLogin()}>
-                    <Text>Iniciar sesión</Text>
+                    <View><Text>Iniciar sesión</Text></View>
                 </TouchableWithoutFeedback>
             </View>
         );

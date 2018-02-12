@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Button, Text, ScrollView, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/EvilIcons';
 import Modal from "react-native-modal";
 import styles from './title.style';
 
@@ -22,7 +23,8 @@ export default class TitleComponent extends Component {
                 </TouchableOpacity>
                 <Modal style={styles.modal} 
                     isVisible={this.state.isModalVisible}
-                    backdropOpacity='0'>
+                    backdropOpacity={0}>
+                    <Icon style={styles.closeIcon} name='close' onPress={() => this.openModal()}></Icon>
                     <View style={{ flex: 1 }}>
                     <Text>I am the modal content!</Text>
                     </View>

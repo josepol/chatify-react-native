@@ -16,5 +16,9 @@ export default StyleSheet.create({
         borderWidth: 2,
         borderColor: 'black',
         borderRadius: 5
+    },
+    closeIcon: {
+        fontSize: 30,
+        width: 30
     }
 });
