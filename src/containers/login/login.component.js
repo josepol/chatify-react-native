@@ -9,15 +9,15 @@ export default class Login extends Component {
         super();
     }
 
+    static navigationOptions = {
+		header: null
+	};
+
     render() {
         return (
-            <SideMenu 
-            menu={<Menu />}
-            menuPosition={'right'}>
-                <View style={styles.container}>
-                    <Text>Login view</Text>
-                </View>
-            </SideMenu>
+            <View style={styles.container}>
+                <Text>Login view</Text>
+            </View>
         );
     }
 }

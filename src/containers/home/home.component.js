@@ -43,30 +43,30 @@ export default class Home extends Component {
 	render() {
 		return (
 			<SideMenu
-				menu={<Menu />}
+				menu={<Menu navigation={this.props.navigation} />}
 				menuPosition={'right'}
 				isOpen={this.state.isOpen}
 				onChange={isOpen => this.menuChangeListener()}>
 				<View style={styles.container}>
 					<ScrollView>
-					<ScrollView
-						horizontal={true}
-						showsHorizontalScrollIndicator={false}
-						contentContainerStyle={styles.contentContainer}>
-						<TitleComponent title='Developer' subtitle='Developer description' />
-						<TitleComponent title='Blogger' subtitle='Blogger Madaf...' />
-						<TitleComponent title='Freelancer' subtitle='Freelancer workaholic' />
-					</ScrollView>
-                    <Button
-                        title="Open menu"
-                        onPress={() => this.openMenu()}
-                        accessibilityLabel="open menu"
-                    />
-					<Button
-                        title="Open logim"
-                        onPress={() => this.openLogin()}
-                        accessibilityLabel="open login"
-                    />
+						<ScrollView
+							horizontal={true}
+							showsHorizontalScrollIndicator={false}
+							contentContainerStyle={styles.contentContainer}>
+							<TitleComponent title='Developer' subtitle='Developer description' />
+							<TitleComponent title='Blogger' subtitle='Blogger Madaf...' />
+							<TitleComponent title='Freelancer' subtitle='Freelancer workaholic' />
+						</ScrollView>
+						<Button
+							title="Open menu"
+							onPress={() => this.openMenu()}
+							accessibilityLabel="open menu"
+						/>
+						<Button
+							title="Open logim"
+							onPress={() => this.openLogin()}
+							accessibilityLabel="open login"
+						/>
 					</ScrollView>
 				</View>
 			</SideMenu>
