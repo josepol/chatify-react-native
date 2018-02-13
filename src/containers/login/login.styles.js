@@ -5,5 +5,9 @@ export default StyleSheet.create({
 		flex: 1,
         backgroundColor: 'white',
         paddingTop: 20
+    },
+    input: {
+        borderColor: 'black',
+        borderWidth: 2
     }
 });
