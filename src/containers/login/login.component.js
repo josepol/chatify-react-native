@@ -14,7 +14,7 @@ export default class Login extends Component {
 
     render() {
         return (
-            <LoginFormComponent/>
+            <LoginFormComponent navigation={this.props.navigation}/>
         );
     }
 }

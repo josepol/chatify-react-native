@@ -21,6 +21,6 @@ export default class Navbar extends Component {
     };
 
     openSideBarMenu() {
-        this.props.navigation.state.routes[0].params.openMenu();
+        this.props.navigation.state.routes[1].params.openMenu();
     }
 }

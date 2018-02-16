@@ -47,6 +47,7 @@ export default class LoginFormComponent extends Component {
         this.authService.login(this.state.login)
             .then(result => {
                 console.log('login response', result);
+                this.props.navigation.navigate('Home');
             })
             .catch(error => {
                 if (error.response.status === 403) {

@@ -6,8 +6,8 @@ import Home from './src/containers/home/home.component';
 
 
 const Router = StackNavigator({
-	Home: { screen: Home },
-	Login: { screen: Login }
+	Login: { screen: Login },
+	Home: { screen: Home }
 });
 
 export default class App extends Component {
