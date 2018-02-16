@@ -39,10 +39,6 @@ export default class Home extends Component {
 			isOpen: !this.state.isOpen
         });
 	}
-	
-	openLogin() {
-		this.props.navigation.navigate('Login');
-	}
 
 	render() {
 		return (
@@ -61,16 +57,6 @@ export default class Home extends Component {
 							<TitleComponent title='Blogger' subtitle='Blogger Madaf...' />
 							<TitleComponent title='Freelancer' subtitle='Freelancer workaholic' />
 						</ScrollView>
-						<Button
-							title="Open menu"
-							onPress={() => this.openMenu()}
-							accessibilityLabel="open menu"
-						/>
-						<Button
-							title="Open logim"
-							onPress={() => this.openLogin()}
-							accessibilityLabel="open login"
-						/>
 						<Text>{this.state.userLoginData.username}</Text>
 					</ScrollView>
 				</View>

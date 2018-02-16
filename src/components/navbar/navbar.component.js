@@ -11,7 +11,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <View style={styles.navbar}>
-                <Text style={styles.polsastre}>Pol Sastre</Text>
+                <Text style={styles.polsastre}>Petify Home</Text>
                 <Icon.Button name="menu"
                     style={styles.icon}
                     onPress={() => this.openSideBarMenu()}>

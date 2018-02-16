@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableWithoutFeedback, AsyncStorage } from 'react-native';
+import { View, Text, StyleSheet, TouchableWithoutFeedback, AsyncStorage, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './menu.styles';
 
@@ -16,6 +16,7 @@ export default class Menu extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <ScrollView>
                 <View style={styles.profile}>
                     <View style={styles.profileInfo}>
                         <Text style={styles.profileInfoText}>{this.state.userLoginData.username}</Text>
@@ -32,6 +33,7 @@ export default class Menu extends Component {
                         <View style={styles.link}><Text style={styles.linkText}>Logout</Text></View>
                     </TouchableWithoutFeedback>
                 </View>
+                </ScrollView>
             </View>
         );
     }
