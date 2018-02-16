@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, AsyncStorage } from 'react-native';
 import AuthService from '../../../services/auth.service';
 import styles from '../login.styles';
 
@@ -47,6 +47,7 @@ export default class LoginFormComponent extends Component {
         this.authService.login(this.state.login)
             .then(result => {
                 console.log('login response', result);
+                AsyncStorage.setItem('userLoginData', JSON.stringify(this.state.login));
                 this.props.navigation.navigate('Home');
             })
             .catch(error => {

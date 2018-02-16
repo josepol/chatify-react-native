@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Button, Text, ScrollView, AsyncStorage } from 'react-native';
 import SideMenu from 'react-native-side-menu';
 import Navbar from '../../components/navbar/navbar.component';
 import Menu from '../../components/menu/menu.component';
@@ -10,8 +10,12 @@ export default class Home extends Component {
 	constructor() {
 		super();
 		this.state = {
-			isOpen: false
+			isOpen: false,
+			userLoginData: ''
 		};
+		AsyncStorage.getItem('userLoginData')
+			.then(data => JSON.parse(data))
+			.then(userLoginData => this.setState({userLoginData}));
 	}
 
 	static navigationOptions = {
@@ -67,6 +71,7 @@ export default class Home extends Component {
 							onPress={() => this.openLogin()}
 							accessibilityLabel="open login"
 						/>
+						<Text>{this.state.userLoginData.username}</Text>
 					</ScrollView>
 				</View>
 			</SideMenu>
