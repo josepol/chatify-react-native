@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Button, Text, ScrollView, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/EvilIcons';
-import Modal from "react-native-modal";
+import Icon from 'react-native-vector-icons/EvilIcons'
+import Modal from "react-native-modal"
+import FriendProfileModalComponent from '../friend-profile-modal/friend-profile-modal.component'
 import styles from './title.style';
 
 export default class TitleComponent extends Component {
@@ -10,6 +11,12 @@ export default class TitleComponent extends Component {
         this.state = {
             isModalVisible: false
         } 
+    }
+
+    openModal() {
+        this.setState({
+            isModalVisible: !this.state.isModalVisible
+        });
     }
 
     render() {
@@ -21,21 +28,8 @@ export default class TitleComponent extends Component {
                         <Text>{this.props.subtitle}</Text>
                     </View>
                 </TouchableOpacity>
-                <Modal style={styles.modal} 
-                    isVisible={this.state.isModalVisible}
-                    backdropOpacity={0}>
-                    <Icon style={styles.closeIcon} name='close' onPress={() => this.openModal()}></Icon>
-                    <View style={{ flex: 1 }}>
-                    <Text>I am the modal content!</Text>
-                    </View>
-                </Modal>
+                <FriendProfileModalComponent isModalVisible={this.state.isModalVisible} />
             </View>
         );
-    }
-
-    openModal() {
-        this.setState({
-            isModalVisible: !this.state.isModalVisible
-        });
     }
 }

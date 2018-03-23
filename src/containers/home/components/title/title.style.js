@@ -8,17 +8,5 @@ export default StyleSheet.create({
         padding: 10,
         backgroundColor: '#56B99D',
         borderRadius: 5
-    },
-    modal: {
-        backgroundColor: 'white',
-        padding: 20,
-        margin: 30,
-        borderWidth: 2,
-        borderColor: 'black',
-        borderRadius: 5
-    },
-    closeIcon: {
-        fontSize: 30,
-        width: 30
     }
 });
