@@ -44,7 +44,10 @@ export default class LoginFormComponent extends Component {
         if (!this.state.login.username || !this.state.login.password) {
             return;
         }
-        this.authService.login(this.state.login)
+        AsyncStorage.setItem('userLoginData', JSON.stringify(this.state.login));
+        this.props.navigation.navigate('Home');
+        //TODO TEST !!!!!!!!
+        /*this.authService.login(this.state.login)
             .then(result => {
                 console.log('login response', result);
                 AsyncStorage.setItem('userLoginData', JSON.stringify(this.state.login));
@@ -56,7 +59,7 @@ export default class LoginFormComponent extends Component {
                         loginCredentialsError: true
                     });
                 }
-            });
+            });*/
     }
 
     render() {
@@ -64,11 +67,12 @@ export default class LoginFormComponent extends Component {
             <View style={styles.container}>
                 <Text style={styles.navbar}></Text>
                 <View style={styles.content}>
-                    <View style={styles.loginLabelView}><Text style={styles.loginLabel}>Petify</Text></View>
+                    <View style={styles.loginLabelView}><Text style={styles.loginLabel}>Login</Text></View>
                     <View style={styles.form}>
-                        <TextInput color={'#56B99D'} style={styles.input} onChangeText={(username) => this.usernameChangeListener(username)} placeholder={'usuario'} />
-                        <TextInput secureTextEntry={true} color={'#56B99D'} style={styles.input} onChangeText={(password) => this.passwordChangeListener(password)} placeholder={'password'}/>
+                        <TextInput style={styles.input} onChangeText={(username) => this.usernameChangeListener(username)} placeholder={'usuario'} />
+                        <TextInput secureTextEntry={true} style={styles.input} onChangeText={(password) => this.passwordChangeListener(password)} placeholder={'password'}/>
                         {this.renderLoginError()}
+                        <TouchableOpacity style={styles.link} onPress={() => this.props.goToRegister()}><Text style={styles.linkText}>Crear cuenta</Text></TouchableOpacity>
                     </View>
                 </View>
                 <View style={styles.footerButton}>

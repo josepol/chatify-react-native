@@ -33,7 +33,14 @@ export default StyleSheet.create({
         flex: 7,
         flexDirection: 'column',
         alignItems: 'stretch',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+    },
+    formRegister: {
+        flex: 7,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexWrap: 'wrap'
     },
     input: {
         height: 50,
@@ -43,7 +50,15 @@ export default StyleSheet.create({
         backgroundColor: 'white',
         borderColor: 'black',
         textAlign: 'center',
-        fontSize: 20
+        fontSize: 20,
+        color: '#56B99D'
+    },
+    link: {
+        alignSelf: 'flex-end',
+        marginRight: 5
+    },
+    linkText: {
+        color: 'white'
     },
     footerButton: {
         backgroundColor: 'white',
